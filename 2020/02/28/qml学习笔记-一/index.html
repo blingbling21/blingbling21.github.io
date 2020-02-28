@@ -65,7 +65,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">533字</span>
+            <span class="post-count">548字</span>
         </span>
     </span>
 
@@ -115,6 +115,7 @@
 <h4 id="用一个Button的clicked信号实现。"><a href="#用一个Button的clicked信号实现。" class="headerlink" title="用一个Button的clicked信号实现。"></a>用一个Button的clicked信号实现。</h4><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">onClicked</span>: &#123;</span><br><span class="line">    <span class="keyword">if</span>(listview.count)&#123;</span><br><span class="line">	listmodel.remove(listview.currentIndex)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>listview是ListView的id。listview.count中记录的时ListView中的item总个数；listview.currentIndex记录当前item的index。listmodel.remove()删除item，有几种用法，目前学会一种，就是上面的一种。</p>
+<h2 id="问题二：ListView、ListModel、delegate"><a href="#问题二：ListView、ListModel、delegate" class="headerlink" title="问题二：ListView、ListModel、delegate"></a>问题二：ListView、ListModel、delegate</h2><p>与ListView及其model和delegate的相关问题</p>
 <h3 id="关于ListView的一些问题"><a href="#关于ListView的一些问题" class="headerlink" title="关于ListView的一些问题"></a>关于ListView的一些问题</h3><h4 id="显示问题"><a href="#显示问题" class="headerlink" title="显示问题"></a>显示问题</h4><p>方向有两种，垂直的和水平的，由orientation决定</p>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">orientation</span>: ListView.Horizontal</span><br></pre></td></tr></table></figure>
 
@@ -126,7 +127,7 @@
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">Component</span> &#123;</span><br><span class="line">    <span class="attribute">id:</span><span class="string"> listdelegate</span></span><br><span class="line">    <span class="title">Image</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: listview.width</span><br><span class="line">        <span class="attribute">height</span>: listview.height</span><br><span class="line">	<span class="attribute">source</span>: <span class="built_in">url</span></span><br><span class="line">	<span class="attribute">fillMode</span>: Image.PreserveAspectFit</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>fillMode使图片被均匀的缩放适应而不被裁剪。source设置的url就是listmodel中每个元素的中的url。</p>
-<h5 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h5><p>一开始我并没有设置Image的属性绑定，而是用锚定让它充满中个listview，但是图片却并没有进行相应变化，原本是多大导入后还是多大。这里重点记录一下，将Image的width和height绑定成listview的width和height，就可以了。</p>
+<h2 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h2><p>一开始我并没有设置Image的属性绑定，而是用锚定让它充满中个listview，但是图片却并没有进行相应变化，原本是多大导入后还是多大。这里重点记录一下，将Image的width和height绑定成listview的width和height，就可以了。</p>
 
       
       <!-- reward -->
