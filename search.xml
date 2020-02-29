@@ -29,7 +29,7 @@
 <figure class="highlight qml"><table><tr><td class="code"><pre><span class="line"><span class="title">Component</span> &#123;</span><br><span class="line">    <span class="attribute">id:</span><span class="string"> listdelegate</span></span><br><span class="line">    <span class="title">Image</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: listview.width</span><br><span class="line">        <span class="attribute">height</span>: listview.height</span><br><span class="line">	<span class="attribute">source</span>: <span class="built_in">url</span></span><br><span class="line">	<span class="attribute">fillMode</span>: Image.PreserveAspectFit</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>fillMode使图片被均匀的缩放适应而不被裁剪。source设置的url就是listmodel中每个元素的中的url。</p>
-<h2 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h2><p>一开始我并没有设置Image的属性绑定，而是用锚定让它充满中个listview，但是图片却并没有进行相应变化，原本是多大导入后还是多大。这里重点记录一下，将Image的width和height绑定成listview的width和height，就可以了。</p>
+<h2 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h2><p>一开始我并没有设置Image的属性绑定，而是用锚定让它充满整个listview，但是图片却并没有进行相应变化，原本是多大导入后还是多大。这里重点记录一下，将Image的width和height绑定成listview的width和height，就可以了。</p>
 ]]></content>
       <categories>
         <category>qml</category>
